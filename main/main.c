@@ -11,7 +11,8 @@ void app_main(){
 
 void lcd(void *arg){
     lcd_init();
-    lcd_panel_set_backgurnd(panel_handle, BLACK);
+    esp_lcd_panel_swap_xy(panel_handle, false);
+    lcd_panel_set_backgrund(panel_handle, BLACK);
     lcd_panel_draw_char(50, 50, 'A', WHITE);
     lcd_panel_draw_string(0, 160, "Hello ESP32", WHITE);
     while(1){

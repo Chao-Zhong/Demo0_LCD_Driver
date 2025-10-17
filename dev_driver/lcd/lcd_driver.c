@@ -65,7 +65,7 @@ void lcd_init (){
  * @param   color   颜色
  * @return  void
 */
-void lcd_panel_set_backgurnd(esp_lcd_panel_handle_t panel, uint16_t color){
+void lcd_panel_set_backgrund(esp_lcd_panel_handle_t panel, uint16_t color){
     if (panel == NULL) return;
     //创建颜色缓冲区
     static uint16_t color_buf[LCD_H * LCD_V];
@@ -74,25 +74,6 @@ void lcd_panel_set_backgurnd(esp_lcd_panel_handle_t panel, uint16_t color){
         color_buf[i] = color;
     }
         esp_lcd_panel_draw_bitmap(panel, 0, 0, LCD_H, LCD_V, color_buf);
-}
-
-/**
- * @brief   获取字符的点阵数据
- * @param   c           字符
- * @param   front       字体
- * @return  字符点阵数据指针
-*/
-const uint8_t * get_char_bitmap(char c){
-    //检查字符有效性
-    if (c < 32 || c > 126){
-        return NULL;
-    }
-
-    //计算字符在字模数组中的索引
-    uint8_t char_index = c - 32;
-
-    //返回索引到的字符数据
-    return (const uint8_t *)asc2_2412[char_index];
 }
 
 /**

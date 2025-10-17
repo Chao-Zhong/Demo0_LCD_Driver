@@ -41,7 +41,7 @@ extern esp_lcd_panel_handle_t panel_handle;
 extern esp_lcd_panel_dev_config_t panel_cfg; 
 
 void lcd_init(void);
-void lcd_panel_set_backgurnd(esp_lcd_panel_handle_t panel, uint16_t color);
+void lcd_panel_set_backgrund(esp_lcd_panel_handle_t panel, uint16_t color);
 void lcd_panel_draw_char(uint16_t x, uint16_t y, unsigned char ch, uint16_t color);
 void lcd_panel_draw_string(uint8_t x, uint8_t y, char *p, uint16_t color);
 
